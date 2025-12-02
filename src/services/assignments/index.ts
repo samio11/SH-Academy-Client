@@ -1,3 +1,4 @@
+"use server";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { FieldValues } from "react-hook-form";
@@ -28,7 +29,7 @@ export const getAssignmentByUser = async (
 ) => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND}/assignment/create?courseId=${courseId}&lessonIndex=${lessonIndex}`,
+      `${process.env.NEXT_PUBLIC_BACKEND}/assignment?courseId=${courseId}&lessonIndex=${lessonIndex}`,
       {
         method: "GET",
         headers: {
@@ -36,7 +37,6 @@ export const getAssignmentByUser = async (
         },
       }
     ).then((x) => x.json());
-    revalidateTag("assignment", "max");
     return res;
   } catch (err) {
     console.log(err);
@@ -57,6 +57,53 @@ export const getAllAssignmentAdmin = async () => {
         },
       }
     ).then((x) => x.json());
+    return res;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
+export const submitAssignment = async (
+  courseId: string,
+  payload: FieldValues
+) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND}/assignment/submit/${courseId}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: (await cookies()).get("accessToken")!.value || "",
+        },
+        body: JSON.stringify(payload),
+      }
+    ).then((x) => x.json());
+    revalidateTag("assignment", "max");
+    return res;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+export const reviewAssignment = async (
+  courseId: string,
+  payload: FieldValues
+) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND}/assignment/review/${courseId}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: (await cookies()).get("accessToken")!.value || "",
+        },
+        body: JSON.stringify(payload),
+      }
+    ).then((x) => x.json());
+    revalidateTag("assignment", "max");
     return res;
   } catch (err) {
     console.log(err);
