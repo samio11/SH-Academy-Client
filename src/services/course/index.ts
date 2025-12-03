@@ -25,14 +25,17 @@ export const createCourse = async (payload: FieldValues) => {
   }
 };
 
-export const getAllCourses = async () => {
+export const getAllCourses = async (query: any) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND}/course`, {
-      method: "GET",
-      next: {
-        tags: ["course"],
-      },
-    }).then((x) => x.json());
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND}/course?${query}`,
+      {
+        method: "GET",
+        next: {
+          tags: ["course"],
+        },
+      }
+    ).then((x) => x.json());
     return res;
   } catch (err) {
     console.log(err);

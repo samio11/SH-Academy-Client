@@ -28,17 +28,10 @@ export function Header() {
         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all" />
       </Link>
       <Link
-        href="/about"
+        href="/courses"
         className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
       >
-        About
-        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all" />
-      </Link>
-      <Link
-        href="/contact"
-        className="text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
-      >
-        contact
+        Courses
         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all" />
       </Link>
     </>

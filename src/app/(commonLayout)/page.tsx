@@ -1,12 +1,22 @@
 import React from "react";
-import { Header } from "./_Components/Home/Navbar";
+
 import Hero from "./_Components/Home/Hero";
+import { FeaturesSection } from "./_Components/Home/Feature";
+import CourseSection from "./_Components/Home/CourseSection";
+import { HowItWorks } from "./_Components/Home/HowItWorks";
+
+import Subscription from "./_Components/Home/Subscription";
 
 export default function Home() {
   return (
     <div>
-      <Header></Header>
       <Hero></Hero>
+      <FeaturesSection></FeaturesSection>
+      <section className="mt-10">
+        <CourseSection />
+      </section>
+      <HowItWorks></HowItWorks>
+      <Subscription></Subscription>
     </div>
   );
 }

@@ -26,6 +26,7 @@ export default function DashboardLayout({
             <DashBoardNavigator></DashBoardNavigator>
           </div>
         </header>
+
         <div className="">{children}</div>
       </SidebarInset>
     </SidebarProvider>
