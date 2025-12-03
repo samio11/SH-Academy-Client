@@ -117,17 +117,13 @@ export function Header() {
               </div>
 
               {/* Logout Button */}
-              <Button
-                variant="outline"
-                onClick={() => handleLogout()}
-                className="border-blue-600 text-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transition-all"
-              >
+              <Button variant="outline" onClick={() => handleLogout()}>
                 Logout
               </Button>
             </div>
           ) : (
             <div className="hidden md:flex items-center gap-4">
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md">
+              <Button className="bg-black text-white shadow-md">
                 <Link href={"/login"}>Login</Link>
               </Button>
             </div>
@@ -162,7 +158,7 @@ export function Header() {
                   </Link>
                 )}
                 <div className="flex flex-col gap-3 pt-4 border-t">
-                  <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md">
+                  <Button className="bg-black text-white shadow-md">
                     <Link href={"/login"}>Login</Link>
                   </Button>
                 </div>
