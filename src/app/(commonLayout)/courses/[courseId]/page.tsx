@@ -10,6 +10,7 @@ import { getSingleCourse } from "@/services/course";
 import { enrollStudent } from "@/services/enrollment";
 import { useUser } from "@/context/UserContext";
 import Loading from "@/app/loading";
+import { ERole } from "@/types/user.type";
 
 export default function ViewCourse() {
   const { courseId } = useParams() as { courseId: string };
@@ -100,6 +101,7 @@ export default function ViewCourse() {
               <Button
                 variant="default"
                 className="w-full bg-black hover:bg-gray-800"
+                disabled={user.role === ERole.admin}
                 onClick={handleEnroll}
               >
                 Enroll Now
