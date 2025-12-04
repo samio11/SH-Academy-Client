@@ -30,16 +30,8 @@ const data = {
           url: "/student/dashboard",
         },
         {
-          title: "Manage User",
-          url: "/admin/manage_user",
-        },
-        {
-          title: "Manage Mess",
-          url: "/admin/manage_mess",
-        },
-        {
-          title: "Manage Bazar",
-          url: "/admin/manage_bazar",
+          title: "Enrolled Course",
+          url: "/student/enrolled_course",
         },
       ],
     },
