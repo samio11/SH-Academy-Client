@@ -4,17 +4,16 @@ import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { FieldValues } from "react-hook-form";
 
-export const createCourse = async (payload: FieldValues) => {
+export const createCourse = async (payload: FormData) => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND}/course/create`,
       {
         method: "POST",
         headers: {
-          "Content-type": "application/json",
           Authorization: (await cookies()).get("accessToken")!.value || "",
         },
-        body: JSON.stringify(payload),
+        body: payload,
       }
     ).then((x) => x.json());
     revalidateTag("course", "max");
