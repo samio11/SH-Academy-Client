@@ -34,12 +34,8 @@ const data = {
           url: "/admin/manage_course",
         },
         {
-          title: "Manage Mess",
-          url: "/admin/manage_mess",
-        },
-        {
-          title: "Manage Bazar",
-          url: "/admin/manage_bazar",
+          title: "Assignment and Quiz",
+          url: "/admin/manage_assignment_quiz",
         },
       ],
     },
