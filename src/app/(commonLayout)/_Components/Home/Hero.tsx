@@ -9,12 +9,12 @@ export default function Hero() {
     <section className="relative w-full h-[1000px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#0a0a0a] to-black">
       {/* Background Animation */}
       <div className="absolute inset-0 opacity-50">
-        {/* <Threads
+        <Threads
           amplitude={5}
           distance={0}
           enableMouseInteraction={true}
           className="w-full h-full"
-        /> */}
+        />
       </div>
 
       {/* Hero Content */}
